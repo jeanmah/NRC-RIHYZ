@@ -14,7 +14,7 @@ import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.sensor.*;
 import lejos.utility.*;
 
-public class Claw {
+public class Claw{
 	//declaring the motors for the claw
 	
 	/*static Port LiftClawMotor_Port = LocalEV3.get().getPort("C");
@@ -22,6 +22,9 @@ public class Claw {
 	static Port OpenClawMotor_Port = LocalEV3.get().getPort("D");
 	static EV3MediumRegulatedMotor OpenClawMotor = new EV3MediumRegulatedMotor(OpenClawMotor_Port);
 	*/
+	
+	NXTRegulatedMotor LiftClawMotor;    // might as well just use NXT for compatibility with other functions
+	EV3MediumRegulatedMotor OpenClawMotor;
 	
 	final static int defaultHeight = 0; // default height should also be grabbing height
 	final static int defaultCloseAngle = 0;
@@ -45,7 +48,6 @@ public class Claw {
 	
 	String firstPiece;
 
-
 	// Goes to the default claw position
 	public void defaultPosition(){
 		if(LiftClawMotor.getTachoCount() >= (defaultHeight + angleThreshold) || LiftClawMotor.getTachoCount() <= (defaultHeight - angleThreshold) ){ 
@@ -59,7 +61,7 @@ public class Claw {
 		
 	}
 	
-	//when robot needs to move with claw up
+	//when robot needs to move with claw up 
 	public void defaultUpMovingPosition(){
 		if((LiftClawMotor.getTachoCount() >= (defaultUpHeight + angleThreshold) || LiftClawMotor.getTachoCount() <= (defaultUpHeight - angleThreshold) )){ 
 			LiftClawMotor.rotateTo(defaultUpHeight,true);
@@ -125,9 +127,6 @@ public class Claw {
 			OpenClawMotor.forward(); 
 		}
 		OpenClawMotor.stop(true);
-	}
-	public void colorcheck(){
-		
 	}
 	
 }
