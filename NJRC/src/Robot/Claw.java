@@ -5,7 +5,7 @@ package Robot;
  * 	use color sensor to detect stuff 
  * determine what something is 
  * lift up to store things in cavity 
- * Note : Angles used for motor servo assumes that the servo started out at the correct angle: all the way down and rubber just touching
+ * Note : Angles used for motor servo assumes that the servo start ed out at the correct angle: all the way down and rubber just touching
  */
 
 import lejos.hardware.motor.*;
@@ -16,10 +16,12 @@ import lejos.utility.*;
 
 public class Claw {
 	//declaring the motors for the claw
-	static Port LiftClawMotor_Port = LocalEV3.get().getPort("C");
+	
+	/*static Port LiftClawMotor_Port = LocalEV3.get().getPort("C");
 	static NXTRegulatedMotor LiftClawMotor = new NXTRegulatedMotor(LiftClawMotor_Port);
 	static Port OpenClawMotor_Port = LocalEV3.get().getPort("D");
 	static EV3MediumRegulatedMotor OpenClawMotor = new EV3MediumRegulatedMotor(OpenClawMotor_Port);
+	*/
 	
 	final static int defaultHeight = 0; // default height should also be grabbing height
 	final static int defaultCloseAngle = 0;
