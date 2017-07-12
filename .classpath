@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="NJRC/src"/>
 	<classpathentry kind="lib" path="NJRC/Main_code.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.lejos.ev3.ldt.LEJOS_EV3_LIBRARY_CONTAINER/"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_131"/>
 	<classpathentry kind="output" path="NJRC/bin"/>
 </classpath>

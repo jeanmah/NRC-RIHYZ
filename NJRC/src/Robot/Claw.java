@@ -10,22 +10,21 @@ package Robot;
 
 import lejos.hardware.motor.*;
 import lejos.hardware.port.Port;
+
+import javax.xml.bind.annotation.XmlElementDecl.GLOBAL;
+
 import lejos.hardware.ev3.LocalEV3;
 import lejos.hardware.sensor.*;
 import lejos.utility.*;
 
 public class Claw{
-	//declaring the motors for the claw
-	
+	//declaring the motors for the claw	
 	/*static Port LiftClawMotor_Port = LocalEV3.get().getPort("C");
 	static NXTRegulatedMotor LiftClawMotor = new NXTRegulatedMotor(LiftClawMotor_Port);
 	static Port OpenClawMotor_Port = LocalEV3.get().getPort("D");
 	static EV3MediumRegulatedMotor OpenClawMotor = new EV3MediumRegulatedMotor(OpenClawMotor_Port);
-	*/
-	
-	NXTRegulatedMotor LiftClawMotor;    // might as well just use NXT for compatibility with other functions
-	EV3MediumRegulatedMotor OpenClawMotor;
-	
+	*/	  
+
 	final static int defaultHeight = 0; // default height should also be grabbing height
 	final static int defaultCloseAngle = 0;
 	final static int defaultOpenAngle = 0;
@@ -46,7 +45,15 @@ public class Claw{
 	final int baseDist = 0;
 	final int deciderDist = 0;
 	
-	String firstPiece;
+	String firstPiece;  
+	 NXTRegulatedMotor LiftClawMotor;
+	 EV3MediumRegulatedMotor OpenClawMotor;
+	 
+	public void claw_setup(NXTRegulatedMotor liftClawMotor,EV3MediumRegulatedMotor openClawMotor) {
+		LiftClawMotor = liftClawMotor;
+		OpenClawMotor = openClawMotor;
+	 }
+
 
 	// Goes to the default claw position
 	public void defaultPosition(){
