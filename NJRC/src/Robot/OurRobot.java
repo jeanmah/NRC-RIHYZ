@@ -67,10 +67,6 @@ public class OurRobot {
 		OpenClawMotor = new EV3MediumRegulatedMotor(brick.getPort(OpenClawMotor_Port));
 		
 		
-		
-		
-
-		
 		// prepare the pilot we use for navigation
 
 	}
