@@ -22,7 +22,6 @@ public class Main_code
 //			Delay.msDelay(100);
 //		}
 		Our_robot Robot = new Our_robot();
-		
 		//Gyro gyro = new Gyro(BrickFinder.getDefault().getPort("S1"));
 		//gyro.reset();
 //		while(true)
