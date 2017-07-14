@@ -21,11 +21,11 @@ public class BasicClaw {
 	
 	//calling motors
 	
-	BaseRegulatedMotor LiftClawMotor;
-	BaseRegulatedMotor OpenClawMotor; 
+	NXTRegulatedMotor LiftClawMotor;
+	EV3MediumRegulatedMotor OpenClawMotor; 
 	
 	
-	public void setupClaw(BaseRegulatedMotor liftclawmotor, BaseRegulatedMotor openclawmotor){
+	public void setupClaw(NXTRegulatedMotor liftclawmotor, 	EV3MediumRegulatedMotor openclawmotor){
 		LiftClawMotor = liftclawmotor;
 		OpenClawMotor = openclawmotor;
 		LiftClawMotor.setSpeed(50); // need to test speed

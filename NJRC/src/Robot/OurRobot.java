@@ -32,6 +32,8 @@ public class OurRobot {
 	String LeftMotor_Port = "A", RightMotor_Port = "B", LiftClawMotor_Port = "C", OpenClawMotor_Port = "D";
 	MovePilot pilot;
 	
+	BasicClaw Claw = new BasicClaw();
+
 	// sensors
 	String ClawColorSensor_Port = "S4", SideColorSensor_Port = "S3", Gyro_Port = "S1", LightSensor_Port = "S2";
 	ClawColorSensor CCS;
@@ -65,7 +67,8 @@ public class OurRobot {
 		//ClawSetup
 		LiftClawMotor = new NXTRegulatedMotor(brick.getPort(LiftClawMotor_Port));
 		OpenClawMotor = new EV3MediumRegulatedMotor(brick.getPort(OpenClawMotor_Port));
-		
+		Claw.setupClaw(LiftClawMotor, OpenClawMotor);
+
 		
 		// prepare the pilot we use for navigation
 
@@ -77,5 +80,9 @@ public class OurRobot {
 		//SCS = new SideColorSensor(brick.getPort(SideColorSensor_Port));
 		//GyroSensor = new Gyro (brick.getPort(Gyro_Port));
 		//LS = new LightSensor(brick.getPort(LightSensor_Port));
+	}
+	//will delete later 
+	public void testClaw(){
+		Claw.OpenCloseMotion(20);
 	}
 }
